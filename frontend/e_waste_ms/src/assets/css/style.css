@@ -1,0 +1,1023 @@
+/* Userdashboard.css */
+/* --- General Body & Typography --- */
+:root {
+    --primary-color: #27ae60; /* Green */
+    --secondary-color: #2c3e50; /* Dark Blue/Gray */
+    --accent-color: #3498db; /* Blue */
+    --light-gray: #f4f7f6;
+    --dark-gray: #555;
+    --text-color: #333;
+}
+
+/* --- General Body & Typography --- */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-subtitle {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: var(--dark-gray);
+}
+
+/* --- Main Content Area --- */
+main {
+    flex: 1; 
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: var(--dark-gray);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1611270418597-a6c77f4b7271?auto=format&fit=crop&w=1470');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 80px 0;
+    /* edited by us */
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Services Section --- */
+.services-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Forms & Cards (Login, Register, Dashboards) --- */
+.form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.dashboard-page {
+    padding: 30px 15px;
+}
+
+.form-container {
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* General button style, used mostly for forms */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* 
+--- BUTTON CORRECTION ---
+This new, specific rule targets ONLY the button in the hero section.
+It makes the button's width automatic and adjusts the padding for a better look.
+*/
+.hero-section .btn {
+    width: auto; /* This is the key change to stop it being full-width */
+    padding: 14px 40px; /* Adjusts the size of the button */
+}
+
+
+.btn.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn.btn-primary:hover {
+    background-color: #219d55;
+}
+
+/* --- Dashboard Specifics --- */
+/* --- User Dashboard Specific Styles --- */
+
+/* Total E-Waste Count */
+.total-ewaste-count {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.total-ewaste-count h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-ewaste-count h3 span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 15px;
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px 15px;
+    border-radius: 5px;
+    line-height: 1; /* Ensure text alignment */
+}
+
+/* Save Item Button - Using btn-primary for consistency */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    /* Already defined, just ensure it's used */
+}
+
+.btn-primary:hover {
+    background-color: #219d55; /* Darker primary on hover */
+}
+
+
+/* E-Waste Items Table */
+.ewaste-table-container {
+    margin-top: 2rem;
+    overflow-x: auto; /* For responsiveness on small screens */
+}
+
+.ewaste-table-container .admin-table {
+    margin-bottom: 1.5rem; /* Space below the table before the submit button */
+}
+
+.ewaste-table-container .admin-table th,
+.ewaste-table-container .admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Remove Button in Table */
+.btn-remove {
+    background-color: #e74c3c; /* Red color for remove */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    width: auto; /* Override default btn full width */
+}
+
+.btn-remove:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Submit All Requests Button */
+.btn-submit-all {
+    background-color: var(--accent-color); /* Blue for final submission */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block; /* Make it a block element to control width */
+    width: fit-content; /* Adjust width to content */
+    margin: 2rem auto 0 auto; /* Center it below the table */
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit-all:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.no-items-message {
+    text-align: center;
+    color: var(--dark-gray);
+    font-style: italic;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+/* Ensure the count input field looks good */
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.dashboard-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
+}
+
+.request-card {
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background: var(--light-gray);
+}
+
+.divider {
+    margin: 2.5rem 0;
+    border: 1px solid #eee;
+}
+
+/* --- Progress Bar --- */
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-top: 0; /* Remove padding that made space for old icons */
+}
+
+/* Remove the line that connects the steps */
+.progress-bar::before {
+    display: none; 
+}
+
+.progress-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding-top: 0; /* Adjust padding as icons are removed */
+    font-size: 0.9rem;
+    color: #aaa;
+    display: flex; /* Use flex to easily center text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    min-height: 28px; /* Give some height if needed for alignment */
+    border-bottom: 2px solid #e0e0e0; /* Add a subtle line below steps instead */
+    margin: 0 5px; /* Add some space between steps */
+    padding-bottom: 5px;
+}
+
+/* Remove step-icon styles */
+.step-icon {
+    display: none; 
+}
+
+.progress-step.active {
+    color: var(--text-color);
+    font-weight: bold;
+    border-color: var(--accent-color); /* Highlight active step with color */
+}
+
+
+/* --- Admin Table --- */
+.table-container {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    min-width: 600px; 
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap; 
+}
+
+.admin-table th {
+    background-color: var(--light-gray);
+    font-weight: bold;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.admin-table select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+/* Updated Status Classes */
+.status.onprogress { background-color: #f39c12; } /* Orange */
+.status.collected { background-color: #3498db; }  /* Blue */
+.status.completed { background-color: #2ecc71; }  /* Green */
+.status.approved { background-color: #23c1be; }
+.status.cancelled { background-color: #ac0202; }
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: #bdc3c7;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #f0f0f0;
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .services-section {
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .request-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .progress-step {
+        font-size: 0.75rem;
+    }
+}
+.full_login,.full_admindashboard,.full_register,.full_userdashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/*  */
+.hero-section {
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.2rem;
+}
+
+.hero-section p {
+    font-size: 1rem;
+}
+
+.services-section {
+    padding: 60px 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+.card {
+    padding: 1.5rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.request-card {
+    padding: 1.5rem 1rem;
+}
+
+.progress-step {
+    font-size: 0.75rem;
+}
+/*  */
+/* --- CORRECTED Profile Menu CSS --- */
+
+/* This targets the container for the profile button and dropdown */
+.profile-menu {
+    position: relative; /* Essential for positioning the dropdown */
+    display: flex;     /* Aligns the button vertically with other nav links */
+    align-items: center;
+}
+
+/* Style for the button that shows the user icon */
+.profile-btn {
+    background: none;
+    border: none;
+    color: var(--dark-gray); /* Match the color of your other navbar links */
+    font-size: 1.8rem;      /* Make the icon a bit larger and easier to click */
+    cursor: pointer;
+    padding: 0.5rem 1rem; /* Give it the same padding as your other nav links */
+    transition: color 0.3s;
+    line-height: 1; /* Helps with vertical alignment */
+}
+
+.profile-btn:hover {
+    color: var(--primary-color); /* Use your theme's hover color */
+}
+
+/* The actual dropdown box */
+.profile-dropdown {
+    position: absolute;
+    top: 120%; /* Position it just below the button with a little space */
+    right: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* A slightly stronger shadow */
+    z-index: 101; /* Make sure it's above the header's z-index */
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    text-align: center;
+    border: 1px solid #f0f0f0; /* A subtle border */
+    overflow: hidden; /* THIS IS THE FIX: Clips anything that goes outside the rounded corners */
+}
+
+/* Links and buttons inside the dropdown */
+.profile-dropdown a, 
+.profile-dropdown button {
+    color: var(--text-color); /* Use your theme's text color */
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.profile-dropdown a:hover, 
+.profile-dropdown button:hover {
+    background-color: var(--light-gray); /* Use your theme's light gray for hover */
+}
+/*  */
+/* Add this to the end of your CSS file */
+
+/* --- Updated Profile Menu CSS --- */
+
+/* Style for the new profile header inside the dropdown */
+.profile-info {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0; /* Separator line */
+    margin-bottom: 8px; /* Space below the separator */
+}
+
+/* Styling for the institution name (h6) */
+.profile-info h6 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Styling for the email text (p) */
+.profile-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+}
+
+
+/* Styling for the Profile Initial in the button */
+.profile-initial {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* We need to adjust the profile button's padding if we use the initial */
+.profile-btn {
+    padding: 0.3rem 1rem; /* Adjust padding to fit the circle */
+}
+/* nav logout userdas.. */
+/* Add this to your main CSS file */
+
+.navbar-logout-btn {
+    background: none;
+    border: none;
+    color: var(--dark-gray); /* Match your other navbar links */
+    font-family: inherit;   /* Use the same font as the rest of the site */
+    font-size: inherit;     /* Use the same font size */
+    font-weight: 500;       /* Match the font weight */
+    cursor: pointer;
+    padding: 0.5rem 1rem;   /* Match the padding */
+    transition: color 0.3s;
+}
+/* admin */
+/* src/assets/css/style.css */
+
+/* --- ADD THIS CSS AT THE END OF YOUR FILE --- */
+
+.admin-request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-request-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.admin-request-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-request-card .card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.admin-request-card .card-header span {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.admin-request-card .card-body {
+  padding: 1rem;
+}
+
+.admin-request-card .card-body h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.admin-request-card .card-body ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.admin-request-card .card-body li {
+  padding: 0.25rem 0;
+}
+
+.admin-request-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ddd;
+}
+
+.status-display {
+  font-weight: bold;
+}
+
+.status-display .status {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.status-action label {
+    margin-right: 0.5rem;
+}
+
+.status-select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+/* File: frontend/src/components/admin/AdminDashboard.css */
+
+/* --- Main Card & Button Styling --- */
+.admin-request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.admin-request-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.admin-request-card .card-header, .admin-request-card .card-footer {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 1rem; /* Adds space between items */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+}
+.admin-request-card .card-header {
+  border-bottom: 1px solid #ddd;
+}
+.admin-request-card .card-footer {
+  border-top: 1px solid #ddd;
+}
+.admin-request-card .card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.admin-request-card .card-header span {
+  font-size: 0.9rem;
+  color: #555;
+}
+.admin-request-card .card-body {
+  padding: 1rem;
+}
+.admin-request-card .card-body h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.admin-request-card .card-body ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+.admin-request-card .card-body li {
+  padding: 0.25rem 0;
+}
+.status-display {
+  font-weight: bold;
+}
+.status-display .status {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.status-action label {
+    margin-right: 0.5rem;
+}
+.status-select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.btn-view-history {
+  padding: 0.5rem 1rem;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn-view-history:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* --- Modal Styling --- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #888;
+}
+.modal-content h2 {
+  margin-top: 0;
+}
+.history-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.history-list li {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.history-list li:last-child {
+  border-bottom: none;
+}
+.history-timestamp {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.25rem;
+}
+.history-details {
+  font-size: 1rem;
+}
+
+/* File: frontend/src/components/pages/AdminDashboard.css */
+
+.admin-dashboard {
+    padding: 2rem;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead tr {
+    background-color: #f4f4f4;
+}
+
+select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the button when it is disabled */
+.action-btn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+/* Optional: Style the dropdown based on status */
+.status-pending { color: #ffa500; border-color: #ffa500; }
+.status-in-progress { color: #007bff; border-color: #007bff; }
+.status-completed { color: #28a745; border-color: #28a745; }
+.status-cancelled { color: #dc3545; border-color: #dc3545; }
+
+/* */
+@media(max-width:650px){
+    .total-ewaste-count h3{
+    background-color:transparent !important;
+    color: #ffffff;
+    padding: 1rem !important;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    /* margin-bottom:0px !important; */
+    margin:0 !important;
+    padding: 5px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.total-ewaste-count span{
+    font-size: 1.5rem !important;
+}
+}
