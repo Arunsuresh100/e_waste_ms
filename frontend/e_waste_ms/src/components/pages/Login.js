@@ -12,7 +12,6 @@ function Login() {
     // --- START: Added for new features ---
     const [showPassword, setShowPassword] = useState(false);
     const [formErrors, setFormErrors] = useState({});
-    const [isEmailValid, setIsEmailValid] = useState(true);
     // --- END: Added for new features ---
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -21,7 +20,6 @@ function Login() {
     // --- START: Added Email Validation function ---
     const validateEmail = (email) => {
         const isValid = /\S+@\S+\.\S+/.test(email);
-        setIsEmailValid(isValid);
         if (!isValid) {
             setFormErrors(prevErrors => ({ ...prevErrors, email: "Please enter a valid email address." }));
         } else {
